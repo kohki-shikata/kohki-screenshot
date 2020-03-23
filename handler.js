@@ -1,7 +1,8 @@
 const puppeteer = require('puppeteer-core')
 
 module.exports = (event, response) => {
-  const url = event.query.url
+  // const url = event.query.url
+  const url = 'https://google.com/'
   (async () => {
     const browser = await puppeteer.launch({headless: true});
     const page = await browser.newPage();

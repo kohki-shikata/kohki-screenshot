@@ -3,7 +3,7 @@ const puppeteer = require('puppeteer-core')
 module.exports = (event, response) => {
   const url = event.query.url
   let title = ''
-  (async () => {
+  
     const browser = await puppeteer.launch({
       args: [
         '--no-sandbox',
@@ -16,6 +16,6 @@ module.exports = (event, response) => {
     title = page.$('title')
 
     browser.close();
-  })();
+  
   response.status(200).succeed(title);
 };
